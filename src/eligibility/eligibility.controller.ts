@@ -1,4 +1,13 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Post } from '@nestjs/common';
+
+import { EligibilityService } from './eligibility.service';
 
 @Controller('eligibility')
-export class EligibilityController {}
+export class EligibilityController {
+  constructor(private eligibilityService: EligibilityService) {}
+
+  @Post('verify')
+  verify() {
+    return this.eligibilityService.verifyClientEligibility();
+  }
+}
