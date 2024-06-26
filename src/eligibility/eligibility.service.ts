@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
 
+import { VerifyClientEligibilityRequestDTO } from './eligibility.dto';
+
 @Injectable()
 export class EligibilityService {
-  verifyClientEligibility() {
+  verifyClientEligibility(dto: VerifyClientEligibilityRequestDTO) {
     return { success: true };
   }
 }
